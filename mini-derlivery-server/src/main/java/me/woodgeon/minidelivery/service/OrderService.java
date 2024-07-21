@@ -1,0 +1,17 @@
+package me.woodgeon.minidelivery.service;
+
+import lombok.RequiredArgsConstructor;
+import me.woodgeon.minidelivery.domain.Order;
+import me.woodgeon.minidelivery.dto.AddOrderRequest;
+import me.woodgeon.minidelivery.repository.OrderRepository;
+import org.springframework.stereotype.Service;
+
+@RequiredArgsConstructor
+@Service
+public class OrderService {
+    private final OrderRepository orderRepository;
+
+    public Order save(AddOrderRequest request) {
+        return orderRepository.save(request.toEntity());
+    }
+}
