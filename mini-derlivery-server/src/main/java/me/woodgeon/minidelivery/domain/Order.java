@@ -1,15 +1,14 @@
 package me.woodgeon.minidelivery.domain;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Table(name = "\"order\"")
+@Builder
+@AllArgsConstructor
+@Table(name = "foodOrder")
 public class Order {
 
     @Id
@@ -17,15 +16,23 @@ public class Order {
     @Column(name = "id", updatable = false)
     private Long id;
 
-    @Column(name = "foodOrder", nullable = false)
-    private String foodOrder;
+    @Column(name = "orderTime", nullable = false)
+    private String orderTime;
+
+    @Column(name = "foodName", nullable = false)
+    private String foodName;
 
     @Column(name = "address", nullable = false)
     private String address;
 
+    @Column(name = "amount", nullable = false)
+    private String amount;
+
     @Builder
-    public Order(String foodOrdered, String address) {
-        this.foodOrder = foodOrdered;
+    public Order(String orderTime, String foodName, String address, String amount) {
+        this.orderTime = orderTime;
+        this.foodName = foodName;
         this.address = address;
+        this.amount = amount;
     }
 }
