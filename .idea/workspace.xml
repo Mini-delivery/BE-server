@@ -1,18 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
+    <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="864a106e-f6f2-4a46-af18-4bf23e9382dc" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mini-derlivery-server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/mini-derlivery-server/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mini-derlivery-server/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/mini-derlivery-server/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mini-derlivery-server/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mini-derlivery-server/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mini-derlivery-server/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mini-derlivery-server/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mini-derlivery-server/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mini-derlivery-server/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mini-derlivery-server/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mini-derlivery-server/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mini-derlivery-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mini-derlivery-server/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mini-derlivery-server/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/mini-derlivery-server/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mini-derlivery-server/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/mini-derlivery-server/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mini-derlivery-server/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/mini-derlivery-server/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mini-derlivery-server/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/mini-derlivery-server/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mini-derlivery-server/src/main/java/me/woodgeon/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/mini-derlivery-server/src/main/java/me/woodgeon/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mini-derlivery-server/src/main/java/me/woodgeon/minidelivery/MiniDeliveryApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/mini-derlivery-server/src/main/java/me/woodgeon/minidelivery/MiniDeliveryApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mini-derlivery-server/src/main/java/me/woodgeon/minidelivery/controller/OrderApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/mini-derlivery-server/src/main/java/me/woodgeon/minidelivery/controller/OrderApiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mini-derlivery-server/src/main/java/me/woodgeon/minidelivery/domain/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/mini-derlivery-server/src/main/java/me/woodgeon/minidelivery/domain/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mini-derlivery-server/src/main/java/me/woodgeon/minidelivery/dto/AddOrderRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/mini-derlivery-server/src/main/java/me/woodgeon/minidelivery/dto/AddOrderRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mini-derlivery-server/src/main/java/me/woodgeon/minidelivery/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/mini-derlivery-server/src/main/java/me/woodgeon/minidelivery/repository/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mini-derlivery-server/src/main/java/me/woodgeon/minidelivery/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/mini-derlivery-server/src/main/java/me/woodgeon/minidelivery/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mini-derlivery-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mini-derlivery-server/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,10 +49,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/82109/Desktop/New_github/Mini-Delivery/mini-derlivery-server"
+    "last_opened_file_path": "C:/Users/82109/Desktop/My github/Mini-Delivery/mini-derlivery-server"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
