@@ -10,17 +10,13 @@ import me.woodgeon.minidelivery.domain.Order;
 @Getter
 public class AddOrderRequest {
 
-    private String order_time;
-    private String menu;
+    private String foodOrder;
     private String address;
-    private int amount;
 
     public Order toEntity() {
         return Order.builder()
-                .order_time(order_time)
-                .menu(menu)
+                .foodOrdered(foodOrder)
                 .address(address)
-                .amount(amount)
                 .build();
     }
 }

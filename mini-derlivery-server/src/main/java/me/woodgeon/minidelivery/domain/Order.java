@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Table(name="foodOrder")
+@Table(name = "\"order\"")
 public class Order {
 
     @Id
@@ -17,23 +17,15 @@ public class Order {
     @Column(name = "id", updatable = false)
     private Long id;
 
-    @Column(name = "order_time", nullable = false)
-    private String order_time;
-
-    @Column(name = "menu", nullable = false)
-    private String menu;
+    @Column(name = "foodOrder", nullable = false)
+    private String foodOrder;
 
     @Column(name = "address", nullable = false)
     private String address;
 
-    @Column(name = "amount", nullable = false)
-    private int amount;
-
     @Builder
-    public Order(String order_time, String menu, String address, int amount) {
-        this.order_time = order_time;
-        this.menu = menu;
+    public Order(String foodOrdered, String address) {
+        this.foodOrder = foodOrdered;
         this.address = address;
-        this.amount = amount;
     }
 }
