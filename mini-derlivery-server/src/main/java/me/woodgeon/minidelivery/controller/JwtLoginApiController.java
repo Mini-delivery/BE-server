@@ -38,7 +38,7 @@ public class JwtLoginApiController {
             return "아이디 혹은 비밀번호가 틀렸습니다.";
         }
 
-        String secretKey = "my-secret-key-147852";
+        String secretKey = "my-secret-key-123123";
         long expireTimeMs = 1000 * 60 * 60;     // Token 유효 시간 = 60분
 
         String jwtToken = JwtTokenUtil.createToken(user.getLoginId(), secretKey, expireTimeMs);

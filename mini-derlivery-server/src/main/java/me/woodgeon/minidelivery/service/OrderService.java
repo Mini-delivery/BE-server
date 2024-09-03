@@ -6,6 +6,8 @@ import me.woodgeon.minidelivery.dto.AddOrderRequest;
 import me.woodgeon.minidelivery.repository.OrderRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class OrderService {
@@ -13,5 +15,9 @@ public class OrderService {
 
     public Order save(AddOrderRequest request) {
         return orderRepository.save(request.toEntity());
+    }
+
+    public List<Order> getAllOrders() {
+        return orderRepository.findAll();
     }
 }

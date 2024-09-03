@@ -28,6 +28,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authz -> authz
                         .requestMatchers("/jwt-login/join").permitAll()
                         .requestMatchers("/jwt-login/login").permitAll()
+                        .requestMatchers("/api/history").authenticated()
+                        .requestMatchers("/api/orders").authenticated()
                         .requestMatchers("/jwt-login/info").authenticated()
                         .requestMatchers("/jwt-login/admin/**").hasAuthority(UserRole.ADMIN.name())
                 )

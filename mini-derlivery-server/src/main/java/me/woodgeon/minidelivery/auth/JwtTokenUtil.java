@@ -13,6 +13,7 @@ import java.util.Date;
 public class JwtTokenUtil {
     //JWT 토큰 발급
     private static Key skey = Keys.secretKeyFor(SignatureAlgorithm.HS512);
+
     public static String createToken(String loginId, String key, long expireTimeMs) {
         // Claim에 loginId를 넣어줌으로써 필요시 loginId 꺼내기 가능
         Claims claims = Jwts.claims();

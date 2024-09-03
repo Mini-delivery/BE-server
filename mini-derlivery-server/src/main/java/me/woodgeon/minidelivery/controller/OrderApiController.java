@@ -6,9 +6,12 @@ import me.woodgeon.minidelivery.dto.AddOrderRequest;
 import me.woodgeon.minidelivery.service.OrderService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -23,7 +26,10 @@ public class OrderApiController {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(savedOrder);
     }
-
+    @GetMapping("/api/history")
+    public List<Order> getAllOrders() {
+        return orderService.getAllOrders();
+    }
     // 데이터 리턴하는 PostMapping 만들기
     //http://127.0.0.1/8080/api/orders
 }
