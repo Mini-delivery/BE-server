@@ -3,36 +3,42 @@ package me.woodgeon.minidelivery.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Date;
+
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
 @AllArgsConstructor
-@Table(name = "foodOrder")
+@Table(name = "order")
 public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", updatable = false)
-    private Long id;
+    @Column(name = "order_id", updatable = false)
+    private int order_id;
 
-    @Column(name = "orderTime", nullable = false)
-    private String orderTime;
+    @Column(name = "store_id", nullable = false)
+    private int store_id;
 
-    @Column(name = "foodName", nullable = false)
-    private String foodName;
+    @Column(name = "user_id", nullable = false)
+    private String user_id;
 
-    @Column(name = "address", nullable = false)
-    private String address;
+    @Column(name = "order_tp_cd", nullable = false)
+    private String order_tp_cd;
 
-    @Column(name = "amount", nullable = false)
-    private String amount;
+    @Column(name = "order_date", nullable = false)
+    private Date order_date;
 
-    public Order(String orderTime, String foodName, String address, String amount) {
-        this.orderTime = orderTime;
-        this.foodName = foodName;
-        this.address = address;
-        this.amount = amount;
+    @Column(name = "use_yn", nullable = false)
+    private String use_yn;
+
+    public Order(int store_id, String user_id, String order_tp_cd, Date order_date, String use_yn) {
+        this.store_id = store_id;
+        this.user_id = user_id;
+        this.order_tp_cd = order_tp_cd;
+        this.order_date = order_date;
+        this.use_yn = use_yn;
     }
 
 }

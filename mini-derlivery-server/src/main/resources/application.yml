@@ -1,15 +1,14 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/myDatabases?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
+    url: jdbc:mysql://localhost:3306/myDatabase?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
     username: root
     password: 1234
   jpa:
+    database-platform: org.hibernate.dialect.MySQL57Dialect
+    open-in-view: false
     show-sql: true
     hibernate:
       ddl-auto: update
-    properties:
-      hibernate:
-        format_sql: true
   jwt:
     secret: my-secret-key-123123
