@@ -13,6 +13,7 @@ public class SignupRequest {
     private String loginId;
     private String password;
     private String passwordCheck;
+    private String address;
     private String nickname;
 
     // 비밀번호 암호화 X
@@ -21,6 +22,7 @@ public class SignupRequest {
                 .loginId(this.loginId)
                 .password(this.password)
                 .nickname(this.nickname)
+                .address(this.address)
                 .role(UserRole.USER)
                 .build();
     }

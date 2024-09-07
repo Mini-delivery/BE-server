@@ -3,6 +3,8 @@ package me.woodgeon.minidelivery.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.util.Date;
 
 @Entity
@@ -10,7 +12,7 @@ import java.util.Date;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
 @AllArgsConstructor
-@Table(name = "order")
+@Table(name = "orders")
 public class Order {
 
     @Id
@@ -19,27 +21,30 @@ public class Order {
     private int order_id;
 
     @Column(name = "store_id", nullable = false)
-    private int store_id;
+    private String store_id;
 
     @Column(name = "user_id", nullable = false)
     private String user_id;
 
-    @Column(name = "order_tp_cd", nullable = false)
-    private String order_tp_cd;
+    @Column(name = "order_name", nullable = false)
+    private String order_name;
+
+    @Column(name = "price", nullable = false)
+    private int price;
 
     @Column(name = "order_date", nullable = false)
-    private Date order_date;
+    private LocalDateTime order_date;
 
-    @Column(name = "use_yn", nullable = false)
-    private String use_yn;
-
-    public Order(int store_id, String user_id, String order_tp_cd, Date order_date, String use_yn) {
+    public Order(String store_id, String user_id, String order_name, int price) {
         this.store_id = store_id;
         this.user_id = user_id;
-        this.order_tp_cd = order_tp_cd;
-        this.order_date = order_date;
-        this.use_yn = use_yn;
+        this.order_name = order_name;
+        this.price = price;
     }
 
+    @PrePersist
+    protected void onCreate() {
+        this.order_date = LocalDateTime.now(ZoneId.of("Asia/Seoul"));  // Sets current date and time in Seoul timezone
+    }
 }
 
