@@ -30,6 +30,7 @@ public class SecurityConfig {
                         .requestMatchers("/jwt-login/login").permitAll()
                         .requestMatchers("/api/history").authenticated()
                         .requestMatchers("/api/orders").authenticated()
+                        .requestMatchers("/api/update").authenticated()
                         .requestMatchers("/jwt-login/info").authenticated()
                         .requestMatchers("/jwt-login/admin/**").hasAuthority(UserRole.ADMIN.name())
                 )

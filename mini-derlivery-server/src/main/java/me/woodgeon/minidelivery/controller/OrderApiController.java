@@ -2,7 +2,7 @@ package me.woodgeon.minidelivery.controller;
 
 import lombok.RequiredArgsConstructor;
 import me.woodgeon.minidelivery.domain.Order;
-import me.woodgeon.minidelivery.dto.AddOrderRequest;
+import me.woodgeon.minidelivery.dto.order.AddOrderRequest;
 import me.woodgeon.minidelivery.service.OrderService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,9 +27,9 @@ public class OrderApiController {
                 .body(savedOrder);
     }
     @GetMapping("/api/history")
+    // 주문내역을 조회한 User가 주문한 내용만 리턴하도록 만들기
     public List<Order> getAllOrders() {
         return orderService.getAllOrders();
     }
-    // 데이터 리턴하는 PostMapping 만들기
-    //http://127.0.0.1/8080/api/orders
+
 }

@@ -2,7 +2,7 @@ package me.woodgeon.minidelivery.service;
 
 import lombok.RequiredArgsConstructor;
 import me.woodgeon.minidelivery.domain.Order;
-import me.woodgeon.minidelivery.dto.AddOrderRequest;
+import me.woodgeon.minidelivery.dto.order.AddOrderRequest;
 import me.woodgeon.minidelivery.repository.OrderRepository;
 import org.springframework.stereotype.Service;
 

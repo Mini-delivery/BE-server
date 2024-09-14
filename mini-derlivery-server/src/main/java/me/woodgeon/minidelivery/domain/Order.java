@@ -29,17 +29,21 @@ public class Order {
     @Column(name = "order_name", nullable = false)
     private String order_name;
 
+    @Column(name = "address", nullable = false)
+    private String address;
+
     @Column(name = "price", nullable = false)
     private int price;
 
     @Column(name = "order_date", nullable = false)
     private LocalDateTime order_date;
 
-    public Order(String store_id, String user_id, String order_name, int price) {
+    public Order(String store_id, String user_id, String order_name, int price, String address) {
         this.store_id = store_id;
         this.user_id = user_id;
         this.order_name = order_name;
         this.price = price;
+        this.address = address;
     }
 
     @PrePersist

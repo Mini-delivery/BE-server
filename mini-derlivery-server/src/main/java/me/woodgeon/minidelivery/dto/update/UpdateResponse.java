@@ -1,4 +1,4 @@
-package me.woodgeon.minidelivery.dto;
+package me.woodgeon.minidelivery.dto.update;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,10 +9,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class SigninResponse {
-    private String loginId;
-    private String nickname;
-    private String accessToken;
+public class UpdateResponse {
     private boolean success;
     private String message;
 }

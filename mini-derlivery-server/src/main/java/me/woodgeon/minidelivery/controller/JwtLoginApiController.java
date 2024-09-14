@@ -3,10 +3,10 @@ package me.woodgeon.minidelivery.controller;
 import lombok.RequiredArgsConstructor;
 import me.woodgeon.minidelivery.auth.JwtTokenUtil;
 import me.woodgeon.minidelivery.domain.User;
-import me.woodgeon.minidelivery.dto.SigninResponse;
-import me.woodgeon.minidelivery.dto.SignupResponse;
-import me.woodgeon.minidelivery.dto.SigninRequest;
-import me.woodgeon.minidelivery.dto.SignupRequest;
+import me.woodgeon.minidelivery.dto.signin.SigninResponse;
+import me.woodgeon.minidelivery.dto.signup.SignupResponse;
+import me.woodgeon.minidelivery.dto.signin.SigninRequest;
+import me.woodgeon.minidelivery.dto.signup.SignupRequest;
 import me.woodgeon.minidelivery.service.UserService;
 import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.web.bind.annotation.*;
@@ -36,7 +36,7 @@ public class JwtLoginApiController {
         User user = userService.login(signinRequest);
 
         if (user == null) {
-            return new SigninResponse(null, null, null, false, "아이디 혹은 비밀번호가 틀렸습니다.");
+            return new SigninResponse(null, null, null, null, false, "아이디 혹은 비밀번호가 틀렸습니다.");
         }
 
         String secretKey = "my-secret-key-123123";
@@ -47,6 +47,7 @@ public class JwtLoginApiController {
         return new SigninResponse(
                 user.getLoginId(),
                 user.getNickname(),
+                user.getAddress(),
                 jwtToken,
                 true,
                 "로그인 성공"

@@ -1,11 +1,9 @@
-package me.woodgeon.minidelivery.dto;
+package me.woodgeon.minidelivery.dto.order;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import me.woodgeon.minidelivery.domain.Order;
-
-import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,6 +12,7 @@ public class AddOrderRequest {
     private String store_id;
     private String user_id;
     private String order_name;
+    private String address;
     private int price;
 
     public Order toEntity() {
@@ -22,6 +21,7 @@ public class AddOrderRequest {
                 .user_id(user_id)
                 .order_name(order_name)
                 .price(price)
+                .address(address)
                 .build();
     }
 }

@@ -3,8 +3,9 @@ package me.woodgeon.minidelivery.service;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import me.woodgeon.minidelivery.domain.User;
-import me.woodgeon.minidelivery.dto.SigninRequest;
-import me.woodgeon.minidelivery.dto.SignupRequest;
+import me.woodgeon.minidelivery.dto.signin.SigninRequest;
+import me.woodgeon.minidelivery.dto.signup.SignupRequest;
+import me.woodgeon.minidelivery.dto.update.UpdateRequest;
 import me.woodgeon.minidelivery.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -61,6 +62,19 @@ public class UserService {
 
         return optionalUser.get();
 
+    }
+    public boolean updateUser(String userId, UpdateRequest request) {
+        Optional<User> userOptional = userRepository.findByLoginId(userId);
+
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+            user.setNickname(request.getNickname());
+            user.setAddress(request.getAddress());
+            userRepository.save(user); // 업데이트된 정보 저장
+            return true;
+        }
+
+        return false; // 사용자를 찾지 못한 경우
     }
 
 

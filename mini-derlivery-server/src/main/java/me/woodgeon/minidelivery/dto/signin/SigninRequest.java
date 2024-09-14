@@ -1,4 +1,4 @@
-package me.woodgeon.minidelivery.dto;
+package me.woodgeon.minidelivery.dto.signin;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
