@@ -26,9 +26,21 @@ dependencies {
     implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
     runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+    // Spring Integration MQTT
+    implementation 'org.springframework.integration:spring-integration-mqtt:5.5.15'
+    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5'
+    implementation 'org.springframework.integration:spring-integration-core:5.5.15'
 
 }
 
-test {
-    useJUnitPlatform()
+java {
+    sourceCompatibility = JavaVersion.VERSION_17  // Java 17 사용 명시
+    targetCompatibility = JavaVersion.VERSION_17  // 대상 호환성 명시
+    sourceSets {
+        main {
+            java {
+                srcDirs = ['src/main/java']
+            }
+        }
+    }
 }

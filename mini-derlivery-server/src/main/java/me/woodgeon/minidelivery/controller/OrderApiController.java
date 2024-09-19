@@ -1,5 +1,6 @@
 package me.woodgeon.minidelivery.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.RequiredArgsConstructor;
 import me.woodgeon.minidelivery.domain.Order;
 import me.woodgeon.minidelivery.dto.order.AddOrderRequest;
@@ -20,9 +21,9 @@ public class OrderApiController {
     private final OrderService orderService;
 
     @PostMapping("/api/orders")
-    public ResponseEntity<Order> addOrder(@RequestBody AddOrderRequest request) {
+    public ResponseEntity<Order> addOrder(@RequestBody AddOrderRequest request) throws JsonProcessingException {
         Order savedOrder = orderService.save(request);
-
+        orderService.sendOrderToMqtt(savedOrder);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(savedOrder);
     }
