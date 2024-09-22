@@ -19,7 +19,7 @@ import org.springframework.messaging.MessageHandler;
 @Configuration
 public class MqttConfig {
 
-    private static final String MQTT_BROKER_URL = "tcp://192.168.137.231:1883";  // 브로커의 URL과 포트
+    private static final String MQTT_BROKER_URL = "tcp://172.30.1.64:1883";  // 브로커의 URL과 포트
     private static final String MQTT_TOPIC = "json";  // 메시지를 전달할 주제
 
     @Bean

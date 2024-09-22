@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 @Entity
@@ -36,7 +37,7 @@ public class Order {
     private int price;
 
     @Column(name = "order_date", nullable = false)
-    private LocalDateTime order_date;
+    private String order_date;
 
     public Order(String store_id, String user_id, String order_name, int price, String address) {
         this.store_id = store_id;
@@ -48,7 +49,13 @@ public class Order {
 
     @PrePersist
     protected void onCreate() {
-        this.order_date = LocalDateTime.now(ZoneId.of("Asia/Seoul"));  // Sets current date and time in Seoul timezone
+        LocalDateTime now = LocalDateTime.now(ZoneId.of("Asia/Seoul"));
+
+        // 원하는 형식의 DateTimeFormatter 생성
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy년 M월 d일 H시 m분");
+
+        // 포맷팅된 문자열로 저장
+        this.order_date = now.format(formatter);
     }
 }
 
